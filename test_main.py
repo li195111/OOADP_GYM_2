@@ -68,3 +68,14 @@ def test_main():
     assert matched_individuals[individual_list[1]].id == 1
     assert matched_individuals[individual_list[2]].id == 2
     assert matched_individuals[individual_list[3]].id == 1
+
+
+def test_individual():
+    '''測試 Individual'''
+    with pytest.raises(ValueError):
+        Individual(id=1, gender=Gender.MALE, age=18,
+                coord=Coord(0, 0), intro="",
+                habits="動漫,科技", prefer_different=False)
+        Individual(id=1, gender=Gender.MALE, age=20,
+                coord=Coord(10, 5), intro="",
+                habits="爬山,凹豆", prefer_different=False)
